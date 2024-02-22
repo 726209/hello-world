@@ -35,6 +35,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           echo Daily Builting...
+          git config --local user.email "iospai@qq.com"
+          git config --local user.name "paipai"
           git remote set-url origin https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}
           git pull --rebase
           git commit --allow-empty -m "feat(Daily): Today Builting"
