@@ -1,0 +1,51 @@
+{
+  "name": "commitizen",
+  "version": "0.0.2-alpha.6",
+  "description": "commitizen",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Run Test Cases...\"",
+    "params": "echo \"npm run params --param_key=param_value，Received Parameters：$npm_config_param_key\"",
+    "params1": "echo \"Received Parameters：$npm_config_version\"",
+    "params2": "echo \"Received Parameters：\"",
+    "prepare": "husky install",
+    "commit": "git cz",
+    "release": "standard-version -t ''",
+    "release:first": "npm run release -- --first-release",
+    "release:alpha": "npm run release -- --prerelease alpha",
+    "release:rc": "npm run release -- --prerelease rc",
+    "release:patch": "npm run release -- --release-as patch",
+    "release:minor": "npm run release -- --release-as minor",
+    "release:major": "npm run release -- --release-as major",
+    "release:as": "npm run release -- --release-as 5.10.0-alpha.7",
+    "push": "echo 'Publishing to npm...'"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "17.7.0",
+    "@commitlint/config-conventional": "17.7.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "3.3.0",
+    "cz-customizable": "7.0.0",
+    "husky": "8.0.3",
+    "standard-version": "9.5.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "scripts/commitizen/config.js"
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "posttag": "git push --follow-tags origin main && npm run push && echo 'Publish Success!' && say 'Publish Success!'"
+    }
+  }
+}
