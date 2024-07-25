@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# 发布 alpha 版本
+git add . && npm run commit && npm run release:alpha

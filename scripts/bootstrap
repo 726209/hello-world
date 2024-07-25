@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# 初始化启动组件工程
+# bundle install
+npm i && npm run prepare
