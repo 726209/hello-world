@@ -1,8 +1,12 @@
 {
   "name": "commitizen",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "commitizen",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/726209/hello-world.git"
+  },
   "scripts": {
     "test": "echo \"Run Test Cases...\"",
     "params": "echo \"npm run params --param_key=param_value，Received Parameters：$npm_config_param_key\"",
