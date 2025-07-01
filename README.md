@@ -20,4 +20,4 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribut
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for more details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for more details.2025
