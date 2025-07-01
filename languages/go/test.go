@@ -37,3 +37,75 @@ func main() { // 主函数：程序的执行入口
       fmt.Println("No valid operation provided. Use --add or --sub")
   }
 }
+
+package admin
+
+import (
+	"fmt"
+	"github.com/gin-gonic/gin"
+	"net/http"
+)
+
+type UserController struct {
+	BaseController
+}
+
+func (controller UserController) Index(c *gin.Context) {
+	c.String(http.StatusOK, "用户列表Index")
+	controller.success(c)
+}
+
+func (controller UserController) Add(c *gin.Context) {
+	if value, exists := c.Get("username"); exists {
+		str, ok := value.(string)
+
+		fmt.Printf("***************value(%T)=%s\n", value, value)
+		fmt.Printf("***************ok:%t, %s\n", ok, str)
+	}
+	c.String(http.StatusOK, "用户添加")
+}
+
+func (controller UserController) Edit(c *gin.Context) {
+	c.String(http.StatusOK, "编辑用户")
+}
+
+func (controller UserController) Del(c *gin.Context) {
+	c.String(http.StatusOK, "删除用户")
+}
+
+
+package admin
+
+import (
+	"fmt"
+	"github.com/gin-gonic/gin"
+	"net/http"
+)
+
+type UserController struct {
+	BaseController
+}
+
+func (controller UserController) Index(c *gin.Context) {
+	c.String(http.StatusOK, "用户列表Index")
+	controller.success(c)
+}
+
+func (controller UserController) Add(c *gin.Context) {
+	if value, exists := c.Get("username"); exists {
+		str, ok := value.(string)
+
+		fmt.Printf("***************value(%T)=%s\n", value, value)
+		fmt.Printf("***************ok:%t, %s\n", ok, str)
+	}
+	c.String(http.StatusOK, "用户添加")
+}
+
+func (controller UserController) Edit(c *gin.Context) {
+	c.String(http.StatusOK, "编辑用户")
+}
+
+func (controller UserController) Del(c *gin.Context) {
+	c.String(http.StatusOK, "删除用户")
+}
+
